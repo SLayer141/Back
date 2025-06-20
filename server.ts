@@ -41,6 +41,10 @@ app.post('/', (req: Request, res: Response) => {
   res.send('Hello from the server!');
 });
 
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello from the server!');
+});
+
 AppDataSource.initialize()
   .then(() => {
     console.log('Database connected');
