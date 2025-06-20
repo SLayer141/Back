@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+  "start": "node dist/server.js",
+  "build": "tsc",
+  "dev": "nodemon --watch . --ext ts --exec ts-node server.ts"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bcryptjs": "^3.0.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.3",
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "pg": "^8.16.1",
+    "reflect-metadata": "^0.2.2",
+    "ts-node": "^10.9.2",
+    "typeorm": "^0.3.24",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
