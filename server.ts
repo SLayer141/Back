@@ -3,7 +3,7 @@ import { AppDataSource } from './db/data-source';
 import productRoutes from './routes/productRoutes';
 import userRoutes from './routes/userRoutes';
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT ;
 const app = express();
 
 app.use(express.json());
