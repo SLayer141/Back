@@ -6,6 +6,15 @@ import userRoutes from './routes/userRoutes';
 const port = process.env.PORT ;
 const app = express();
 
+// Set Content Security Policy header to allow fonts, scripts, and styles from self
+app.use((req, res, next) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self'; font-src 'self'; script-src 'self'; style-src 'self';"
+  );
+  next();
+});
+
 app.use(express.json());
 
 app.use(userRoutes);
