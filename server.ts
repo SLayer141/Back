@@ -20,7 +20,7 @@ app.post('/', (req: Request, res: Response) => {
 AppDataSource.initialize()
   .then(() => {
     console.log('Database connected');
-    app.listen(port, () => {
+    app.listen(Number(port), '0.0.0.0', () => {
       console.log(`Server is running on port ${port}`);
     });
   })
