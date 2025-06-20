@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "start": "node dist/server.js",
-  "build": "tsc",
-  "dev": "nodemon --watch . --ext ts --exec ts-node server.ts"
-},
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "nodemon --watch . --ext ts --exec ts-node server.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.3",
     "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "pg": "^8.16.1",
     "reflect-metadata": "^0.2.2",
@@ -24,6 +25,7 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "nodemon": "^3.1.10"
   }
 }

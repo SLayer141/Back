@@ -2,9 +2,15 @@ import express, { Request, Response } from 'express';
 import { AppDataSource } from './db/data-source';
 import productRoutes from './routes/productRoutes';
 import userRoutes from './routes/userRoutes';
+import cors from 'cors';
 
 const port = process.env.PORT;
 const app = express();
+
+// Enable CORS for your frontend domain
+app.use(cors({
+  origin: 'https://front-indol-psi.vercel.app',
+}));
 
 // Set Content Security Policy header to allow fonts, scripts, and styles from self
 app.use((req, res, next) => {
