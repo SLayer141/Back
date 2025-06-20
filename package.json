@@ -18,6 +18,7 @@
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "helmet": "^8.1.0",
     "pg": "^8.16.1",
     "reflect-metadata": "^0.2.2",
     "ts-node": "^10.9.2",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
+    "@types/helmet": "^4.0.0",
     "nodemon": "^3.1.10"
   }
 }

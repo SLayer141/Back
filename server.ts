@@ -3,6 +3,7 @@ import { AppDataSource } from './db/data-source';
 import productRoutes from './routes/productRoutes';
 import userRoutes from './routes/userRoutes';
 import cors from 'cors';
+import helmet from 'helmet';
 
 const port = process.env.PORT;
 const app = express();
@@ -12,14 +13,19 @@ app.use(cors({
   origin: 'https://front-indol-psi.vercel.app',
 }));
 
-// Set Content Security Policy header to allow fonts, scripts, and styles from self
-app.use((req, res, next) => {
-  res.setHeader(
-    'Content-Security-Policy',
-    "default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; script-src 'self';"
-  );
-  next();
-});
+// Set Content Security Policy using helmet
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      connectSrc: ["'self'"],
+      imgSrc: ["'self'", "data:"],
+    },
+  })
+);
 
 app.use(express.json());
 
