@@ -17,6 +17,9 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
 app.use(userRoutes);
 
 app.use('/api/products', productRoutes);
